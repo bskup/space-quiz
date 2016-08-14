@@ -435,89 +435,89 @@ public class MainActivity extends AppCompatActivity {
         RadioGroup radioGroupQ9 = (RadioGroup) findViewById(R.id.radio_group_q9);
         RadioGroup radioGroupQ10 = (RadioGroup) findViewById(R.id.radio_group_q10);
 
-        if (headerText == getString(R.string.intro_header)) {
+        if (headerText.equals(getString(R.string.intro_header))) {
             headerTextView.setText(R.string.question_header_1);
             questionTextView.setText(R.string.question_1);
             multiUseButton.setText(R.string.submit_button);
             radioGroupQ1.setVisibility(View.VISIBLE);
-        } else if ((headerText == getString(R.string.question_header_1)) && questionText == getString(R.string.question_1)) {
+        } else if ((headerText.equals(getString(R.string.question_header_1))) && questionText.equals(getString(R.string.question_1))) {
             radioGroupQ1.setVisibility(View.GONE);
             checkQuestion1();
-        } else if ((headerText == getString(R.string.question_header_1)) && (questionText == getString(R.string.correct)) || questionText == getString(R.string.incorrect_response_1)) {
+        } else if ((headerText.equals(getString(R.string.question_header_1))) && (questionText.equals(getString(R.string.correct))) || questionText.equals(getString(R.string.incorrect_response_1))) {
             headerTextView.setText(R.string.question_header_2);
             questionTextView.setText(R.string.question_2);
             multiUseButton.setText(R.string.submit_button);
             radioGroupQ2.setVisibility(View.VISIBLE);
-        } else if ((headerText == getString(R.string.question_header_2)) && questionText == getString(R.string.question_2)) {
+        } else if ((headerText.equals(getString(R.string.question_header_2))) && questionText.equals(getString(R.string.question_2))) {
             radioGroupQ2.setVisibility(View.GONE);
             checkQuestion2();
-        } else if ((headerText == getString(R.string.question_header_2)) && (questionText == getString(R.string.correct)) || questionText == getString(R.string.incorrect_response_2)) {
+        } else if ((headerText.equals(getString(R.string.question_header_2))) && (questionText.equals(getString(R.string.correct))) || questionText.equals(getString(R.string.incorrect_response_2))) {
             headerTextView.setText(R.string.question_header_3);
             questionTextView.setText(R.string.question_3);
             multiUseButton.setText(R.string.submit_button);
             editTextQ3.setVisibility(View.VISIBLE);
-        } else if ((headerText == getString(R.string.question_header_3)) && questionText == getString(R.string.question_3)) {
+        } else if ((headerText.equals(getString(R.string.question_header_3))) && questionText.equals(getString(R.string.question_3))) {
             editTextQ3.setVisibility(View.GONE);
             checkQuestion3();
-        } else if ((headerText == getString(R.string.question_header_3)) && (questionText == getString(R.string.correct)) || questionText == getString(R.string.incorrect_response_3)) {
+        } else if ((headerText.equals(getString(R.string.question_header_3))) && (questionText.equals(getString(R.string.correct))) || questionText.equals(getString(R.string.incorrect_response_3))) {
             headerTextView.setText(R.string.question_header_4);
             questionTextView.setText(R.string.question_4);
             multiUseButton.setText(R.string.submit_button);
             editTextQ4.setVisibility(View.VISIBLE);
-        } else if ((headerText == getString(R.string.question_header_4)) && questionText == getString(R.string.question_4)) {
+        } else if ((headerText.equals(getString(R.string.question_header_4))) && questionText.equals(getString(R.string.question_4))) {
             editTextQ4.setVisibility(View.GONE);
             checkQuestion4();
-        } else if ((headerText == getString(R.string.question_header_4)) && (questionText == getString(R.string.correct)) || questionText == getString(R.string.incorrect_response_4)) {
+        } else if ((headerText.equals(getString(R.string.question_header_4))) && (questionText.equals(getString(R.string.correct))) || questionText.equals(getString(R.string.incorrect_response_4))) {
             headerTextView.setText(R.string.question_header_5);
             questionTextView.setText(R.string.question_5);
             multiUseButton.setText(R.string.true_button);
             falseButtonQ5.setVisibility(View.VISIBLE);
-        } else if ((headerText == getString(R.string.question_header_5)) && (questionText == getString(R.string.question_5)) && (multiUseButton.getText().toString() == getString(R.string.true_button))) {
+        } else if ((headerText.equals(getString(R.string.question_header_5))) && (questionText.equals(getString(R.string.question_5))) && (multiUseButton.getText().toString().equals(getString(R.string.true_button)))) {
             falseButtonQ5.setVisibility(View.GONE);
             multiUseButton.setText(R.string.next_button);
             answerTrueQuestion5();
-        } else if ((headerText == getString(R.string.question_header_5)) && (questionText == getString(R.string.correct)) || questionText == getString(R.string.incorrect_response_5)) {
+        } else if ((headerText.equals(getString(R.string.question_header_5))) && (questionText.equals(getString(R.string.correct))) || questionText.equals(getString(R.string.incorrect_response_5))) {
             headerTextView.setText(R.string.question_header_6);
             questionTextView.setText(R.string.question_6);
             multiUseButton.setText(R.string.true_button);
             falseButtonQ6.setVisibility(View.VISIBLE);
-        } else if ((headerText == getString(R.string.question_header_6)) && questionText == getString(R.string.question_6)) {
+        } else if ((headerText.equals(getString(R.string.question_header_6))) && questionText.equals(getString(R.string.question_6))) {
             falseButtonQ6.setVisibility(View.GONE);
             multiUseButton.setText(R.string.next_button);
             answerTrueQuestion6();
-        } else if ((headerText == getString(R.string.question_header_6)) && (questionText == getString(R.string.correct)) || questionText == getString(R.string.incorrect_response_6)) {
+        } else if ((headerText.equals(getString(R.string.question_header_6))) && (questionText.equals(getString(R.string.correct))) || questionText.equals(getString(R.string.incorrect_response_6))) {
             headerTextView.setText(R.string.question_header_7);
             questionTextView.setText(R.string.question_7);
             multiUseButton.setText(R.string.submit_button);
             checkBoxesQ7.setVisibility(View.VISIBLE);
-        } else if ((headerText == getString(R.string.question_header_7)) && questionText == getString(R.string.question_7)) {
+        } else if ((headerText.equals(getString(R.string.question_header_7))) && questionText.equals(getString(R.string.question_7))) {
             checkBoxesQ7.setVisibility(View.GONE);
             checkQuestion7();
-        } else if ((headerText == getString(R.string.question_header_7)) && (questionText == getString(R.string.correct)) || questionText == getString(R.string.incorrect_response_7)) {
+        } else if ((headerText.equals(getString(R.string.question_header_7))) && (questionText.equals(getString(R.string.correct))) || questionText.equals(getString(R.string.incorrect_response_7))) {
             headerTextView.setText(R.string.question_header_8);
             questionTextView.setText(R.string.question_8);
             multiUseButton.setText(R.string.submit_button);
             checkBoxesQ8.setVisibility(View.VISIBLE);
-        } else if ((headerText == getString(R.string.question_header_8)) && questionText == getString(R.string.question_8)) {
+        } else if ((headerText.equals(getString(R.string.question_header_8))) && questionText.equals(getString(R.string.question_8))) {
             checkBoxesQ8.setVisibility(View.GONE);
             checkQuestion8();
-        } else if ((headerText == getString(R.string.question_header_8)) && (questionText == getString(R.string.correct)) || questionText == getString(R.string.incorrect_response_8)) {
+        } else if ((headerText.equals(getString(R.string.question_header_8))) && (questionText.equals(getString(R.string.correct))) || questionText.equals(getString(R.string.incorrect_response_8))) {
             headerTextView.setText(R.string.question_header_9);
             questionTextView.setText(R.string.question_9);
             multiUseButton.setText(R.string.submit_button);
             radioGroupQ9.setVisibility(View.VISIBLE);
-        } else if ((headerText == getString(R.string.question_header_9)) && questionText == getString(R.string.question_9)) {
+        } else if ((headerText.equals(getString(R.string.question_header_9))) && questionText.equals(getString(R.string.question_9))) {
             radioGroupQ9.setVisibility(View.GONE);
             checkQuestion9();
-        } else if ((headerText == getString(R.string.question_header_9)) && (questionText == getString(R.string.correct)) || questionText == getString(R.string.incorrect_response_9)) {
+        } else if ((headerText.equals(getString(R.string.question_header_9))) && (questionText.equals(getString(R.string.correct))) || questionText.equals(getString(R.string.incorrect_response_9))) {
             headerTextView.setText(R.string.question_header_10);
             questionTextView.setText(R.string.question_10);
             multiUseButton.setText(R.string.submit_button);
             radioGroupQ10.setVisibility(View.VISIBLE);
-        } else if ((headerText == getString(R.string.question_header_10)) && questionText == getString(R.string.question_10)) {
+        } else if ((headerText.equals(getString(R.string.question_header_10))) && questionText.equals(getString(R.string.question_10))) {
             radioGroupQ10.setVisibility(View.GONE);
             checkQuestion10();
-        } else if ((headerText == getString(R.string.question_header_10)) && (questionText == getString(R.string.correct)) || questionText == getString(R.string.incorrect_response_10)) {
+        } else if ((headerText.equals(getString(R.string.question_header_10))) && (questionText.equals(getString(R.string.correct))) || questionText.equals(getString(R.string.incorrect_response_10))) {
             showSummary();
         }
 
