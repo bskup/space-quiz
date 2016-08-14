@@ -1,0 +1,110 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    // Miscellaneous
+    <string name="app_name">Space Quiz</string>
+    <string name="description">Welcome to Space Quiz! There will be 10 questions of various types with no time limit.\n\nGood luck!</string>
+    <string name="submit_button">Submit</string>
+    <string name="logo_space">Space</string>
+    <string name="logo_quiz">Quiz</string>
+    <string name="next_button">Next</string>
+    <string name="enter_answer_hint">Enter answer here</string>
+    <string name="true_button">True</string>
+    <string name="false_button">False</string>
+    <string name="results_button">Results</string>
+    <string name="results_header">Results</string>
+    <string name="results_score">Score: <xliff:g id="numberCorrect" example="10">%d</xliff:g>/10</string>
+    <string name="results_attempts">Attempts: <xliff:g id="numberOfAttempts" example="1">%d</xliff:g></string>
+    <string name="start_button">Start</string>
+    <string name="good_luck">Good luck!</string>
+    <string name="retry_button">Retry</string>
+    <string name="share_header">Share</string>
+    <string name="intro_header">Intro</string>
+    <string name="correct">Correct!</string>
+    <string name="tweet_nickname_1">#SpaceAce</string>
+    <string name="tweet_nickname_2">#AlmostAstronomical</string>
+    <string name="tweet_nickname_3">#AverageAsteroid</string>
+    <string name="tweet_nickname_4">#BarelyThereSolarFlare</string>
+    <string name="tweet_nickname_5">#BlackHoleBrain</string>
+    <string name="tweet_message">I scored <xliff:g id="numberOfAttempts" example="10">%d</xliff:g>/10 on Space Quiz! <xliff:g id="tweetNickname" example="#SpaceAce">%s</xliff:g> #SpaceQuiz</string>
+
+    // Toast messages displayed on results screen
+    <string name="toast_message_10">10/10: Space Ace!</string>
+    <string name="toast_message_7_9">7&#8211;9: Almost Astronomical!</string>
+    <string name="toast_message_4_6">4&#8211;6: Average Asteroid!</string>
+    <string name="toast_message_1_3">1&#8211;3: Barely There Solar Flare!</string>
+    <string name="toast_message_0">0/10: Black Hole Brain!</string>
+
+    // Question headers
+    <string name="question_header_1">Question 1</string>
+    <string name="question_header_2">Question 2</string>
+    <string name="question_header_3">Question 3</string>
+    <string name="question_header_4">Question 4</string>
+    <string name="question_header_5">Question 5</string>
+    <string name="question_header_6">Question 6</string>
+    <string name="question_header_7">Question 7</string>
+    <string name="question_header_8">Question 8</string>
+    <string name="question_header_9">Question 9</string>
+    <string name="question_header_10">Question 10</string>
+
+    // Questions
+    <string name="question_1">The Earth is 93 million miles from what?</string>
+    <string name="question_2">The constellation Ursa Major is also known as:</string>
+    <string name="question_3">Due to its distance from the Sun and a dense CO2 atmosphere, the hottest planet is:</string>
+    <string name="question_4">A shooting star is an asteroid or other object burning up as it enters Earth\'s atmosphere, also known as a(n):</string>
+    <string name="question_5">Jupiter has over 60 moons.</string>
+    <string name="question_6">The Milky Way galaxy which contains our solar system is an elliptical galaxy.</string>
+    <string name="question_7">Which of the following are true about comets? (Check all that apply)</string>
+    <string name="question_8">If you were on the moon, which of these would be true? (Check all that apply)</string>
+    <string name="question_9">The largest constellation is:</string>
+    <string name="question_10">Stars are born in:</string>
+
+    // Answer options
+    <string name="question_1_option_a">Sun</string>
+    <string name="question_1_option_b">Moon</string>
+    <string name="question_1_option_c">Venus</string>
+    <string name="question_1_option_d">Mars</string>
+    <string name="question_2_option_a">Little Dipper</string>
+    <string name="question_2_option_b">Big Dipper</string>
+    <string name="question_2_option_c">Perseid</string>
+    <string name="question_2_option_d">Polaris</string>
+    <string name="question_7_option_1">Are made of mostly ice and dust</string>
+    <string name="question_7_option_2">Can cause meteor showers on Earth</string>
+    <string name="question_7_option_3">Have more than 1 tail</string>
+    <string name="question_7_option_4">Tail points toward the Sun</string>
+    <string name="question_8_option_1">You weigh 16.5% of your Earth weight.</string>
+    <string name="question_8_option_2">You weigh 116.5% of your Earth weight.</string>
+    <string name="question_8_option_3">It could be as cold as -243\u00B0 F.</string>
+    <string name="question_8_option_4">It could be as hot as 253\u00B0 F.</string>
+    <string name="question_9_option_a">Orion</string>
+    <string name="question_9_option_b">Big Dipper</string>
+    <string name="question_9_option_c">Pegasus</string>
+    <string name="question_9_option_d">Hydra</string>
+    <string name="question_10_option_a">Supernovas</string>
+    <string name="question_10_option_b">Nebulas</string>
+    <string name="question_10_option_c">The Oort Cloud</string>
+    <string name="question_10_option_d">Black holes</string>
+
+    // Correct answers
+    <string name="question_1_answer">a</string>
+    <string name="question_2_answer">b</string>
+    <string name="question_3_answer">Venus</string>
+    <string name="question_4_answer">meteor</string>
+    <string name="question_5_answer">true</string>
+    <string name="question_6_answer">false</string>
+    <string name="question_7_answer">1, 2, and 3</string>
+    <string name="question_8_answer">1, 3, and 4</string>
+    <string name="question_9_answer">d</string>
+    <string name="question_10_answer">b</string>
+
+    // Responses to incorrect answers
+    <string name="incorrect_response_1">Incorrect! The correct answer was the Sun.</string>
+    <string name="incorrect_response_2">Incorrect! The correct answer was the Big Dipper.</string>
+    <string name="incorrect_response_3">Incorrect! The correct answer was Venus.</string>
+    <string name="incorrect_response_4">Incorrect! The correct answer was meteor.</string>
+    <string name="incorrect_response_5">Incorrect! The correct answer was true.</string>
+    <string name="incorrect_response_6">Incorrect! The correct answer was false. The Milky Way is a barred spiral galaxy.</string>
+    <string name="incorrect_response_7">Incorrect! The correct answers were boxes 1, 2, and 3. Box 4 was false because the tails point away from the Sun.</string>
+    <string name="incorrect_response_8">Incorrect! The correct answers were boxes 1, 3, and 4. Box 2 was false because your weight is less on the moon due to decreased gravity.</string>
+    <string name="incorrect_response_9">Incorrect! The correct answer was Hydra.</string>
+    <string name="incorrect_response_10">Incorrect! The correct answer was nebulas.</string>
+
+</resources>
