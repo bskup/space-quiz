@@ -63,7 +63,6 @@
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/question_header"
                 style="@style/HeaderTextStyle"
                 android:text="@string/results_header"/>
 
@@ -84,7 +83,6 @@
                 android:textSize="15sp"/>
 
             <TextView
-                android:id="@+id/share_header"
                 style="@style/HeaderTextStyle"
                 android:text="@string/share_header"/>
 
@@ -102,6 +100,7 @@
                 android:id="@+id/reset_button"
                 style="@style/ButtonStyle"
                 android:onClick="resetQuiz"
+                android:layout_marginRight="0dp"
                 android:text="@string/retry_button"/>
 
         </LinearLayout>

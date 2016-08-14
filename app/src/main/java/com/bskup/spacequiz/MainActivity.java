@@ -2,12 +2,14 @@ package com.bskup.spacequiz;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -30,17 +32,22 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Checks question 1
      */
-    public void checkQuestion1(View view) {
+    public void checkQuestion1() {
 
-        RadioButton radioButtonA = (RadioButton) findViewById(R.id.radio_button_A);
-        boolean isCheckedA = radioButtonA.isChecked();
+        TextView questionTextView = (TextView) findViewById(R.id.question_text_view);
 
-        if (isCheckedA) {
+        Button multiUseButton = (Button) findViewById(R.id.multi_use_button);
+        multiUseButton.setText(R.string.next_button);
+
+        RadioButton radioButton1A = (RadioButton) findViewById(R.id.radio_button_1A);
+        boolean isChecked1A = radioButton1A.isChecked();
+
+        if (isChecked1A) {
             totalCorrect += 1;
 
-            setContentView(R.layout.q1_correct);
+            questionTextView.setText(R.string.correct);
         } else {
-            setContentView(R.layout.q1_incorrect);
+            questionTextView.setText(R.string.incorrect_response_1);
         }
 
     }
@@ -48,17 +55,22 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Checks question 2
      */
-    public void checkQuestion2(View view) {
+    public void checkQuestion2() {
 
-        RadioButton radioButtonB = (RadioButton) findViewById(R.id.radio_button_B);
-        boolean isCheckedB = radioButtonB.isChecked();
+        TextView questionTextView = (TextView) findViewById(R.id.question_text_view);
 
-        if (isCheckedB) {
+        Button multiUseButton = (Button) findViewById(R.id.multi_use_button);
+        multiUseButton.setText(R.string.next_button);
+
+        RadioButton radioButton2B = (RadioButton) findViewById(R.id.radio_button_2B);
+        boolean isChecked2B = radioButton2B.isChecked();
+
+        if (isChecked2B) {
             totalCorrect += 1;
 
-            setContentView(R.layout.q2_correct);
+            questionTextView.setText(R.string.correct);
         } else {
-            setContentView(R.layout.q2_incorrect);
+            questionTextView.setText(R.string.incorrect_response_2);
         }
 
     }
@@ -66,18 +78,23 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Checks question 3
      */
-    public void checkQuestion3(View view) {
+    public void checkQuestion3() {
 
-        EditText answerEditText = (EditText) findViewById(R.id.answer_edit_text);
-        String answerString = answerEditText.getText().toString();
+        TextView questionTextView = (TextView) findViewById(R.id.question_text_view);
+
+        Button multiUseButton = (Button) findViewById(R.id.multi_use_button);
+        multiUseButton.setText(R.string.next_button);
+
+        EditText editTextQ3 = (EditText) findViewById(R.id.edit_text_q3);
+        String answerString = editTextQ3.getText().toString();
         String correctAnswer = getString(R.string.question_3_answer);
 
         if (answerString.equals(correctAnswer)) {
             totalCorrect += 1;
 
-            setContentView(R.layout.q3_correct);
+            questionTextView.setText(R.string.correct);
         } else {
-            setContentView(R.layout.q3_incorrect);
+            questionTextView.setText(R.string.incorrect_response_3);
         }
 
     }
@@ -85,18 +102,23 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Checks question 4
      */
-    public void checkQuestion4(View view) {
+    public void checkQuestion4() {
 
-        EditText answerEditText = (EditText) findViewById(R.id.answer_edit_text);
-        String answerString = answerEditText.getText().toString();
+        TextView questionTextView = (TextView) findViewById(R.id.question_text_view);
+
+        Button multiUseButton = (Button) findViewById(R.id.multi_use_button);
+        multiUseButton.setText(R.string.next_button);
+
+        EditText editTextQ4 = (EditText) findViewById(R.id.edit_text_q4);
+        String answerString = editTextQ4.getText().toString();
         String correctAnswer = getString(R.string.question_4_answer);
 
         if (answerString.equals(correctAnswer)) {
             totalCorrect += 1;
 
-            setContentView(R.layout.q4_correct);
+            questionTextView.setText(R.string.correct);
         } else {
-            setContentView(R.layout.q4_incorrect);
+            questionTextView.setText(R.string.incorrect_response_4);
         }
 
     }
@@ -104,24 +126,36 @@ public class MainActivity extends AppCompatActivity {
     /**
      * If question 5 is answered true
      */
-    public void answerTrueQuestion5(View v) {
+    public void answerTrueQuestion5() {
         totalCorrect += 1;
 
-        setContentView(R.layout.q5_correct);
+        TextView questionTextView = (TextView) findViewById(R.id.question_text_view);
+        questionTextView.setText(R.string.correct);
+
+        Button multiUseButton = (Button) findViewById(R.id.multi_use_button);
+        multiUseButton.setText(R.string.next_button);
     }
 
     /**
      * If question 5 is answered false
      */
     public void answerFalseQuestion5(View v) {
-        setContentView(R.layout.q5_incorrect);
+        TextView questionTextView = (TextView) findViewById(R.id.question_text_view);
+        questionTextView.setText(R.string.incorrect_response_5);
+
+        Button multiUseButton = (Button) findViewById(R.id.multi_use_button);
+        multiUseButton.setText(R.string.next_button);
+
+        Button falseButton = (Button) findViewById(R.id.false_button_q5);
+        falseButton.setVisibility(View.GONE);
     }
 
     /**
      * If question 6 is answered true
      */
-    public void answerTrueQuestion6(View v) {
-        setContentView(R.layout.q6_incorrect);
+    public void answerTrueQuestion6() {
+        TextView questionTextView = (TextView) findViewById(R.id.question_text_view);
+        questionTextView.setText(R.string.incorrect_response_6);
     }
 
     /**
@@ -130,32 +164,44 @@ public class MainActivity extends AppCompatActivity {
     public void answerFalseQuestion6(View v) {
         totalCorrect += 1;
 
-        setContentView(R.layout.q6_correct);
+        TextView questionTextView = (TextView) findViewById(R.id.question_text_view);
+        questionTextView.setText(R.string.correct);
+
+        Button multiUseButton = (Button) findViewById(R.id.multi_use_button);
+        multiUseButton.setText(R.string.next_button);
+
+        Button falseButton = (Button) findViewById(R.id.false_button_q6);
+        falseButton.setVisibility(View.GONE);
     }
 
     /**
      * Checks question 7
      */
-    public void checkQuestion7(View view) {
+    public void checkQuestion7() {
 
-        CheckBox checkBox1 = (CheckBox) findViewById(R.id.check_box_1);
+        TextView questionTextView = (TextView) findViewById(R.id.question_text_view);
+
+        Button multiUseButton = (Button) findViewById(R.id.multi_use_button);
+        multiUseButton.setText(R.string.next_button);
+
+        CheckBox checkBox1 = (CheckBox) findViewById(R.id.check_box_7a);
         boolean isChecked1 = checkBox1.isChecked();
 
-        CheckBox checkBox2 = (CheckBox) findViewById(R.id.check_box_2);
+        CheckBox checkBox2 = (CheckBox) findViewById(R.id.check_box_7b);
         boolean isChecked2 = checkBox2.isChecked();
 
-        CheckBox checkBox3 = (CheckBox) findViewById(R.id.check_box_3);
+        CheckBox checkBox3 = (CheckBox) findViewById(R.id.check_box_7c);
         boolean isChecked3 = checkBox3.isChecked();
 
-        CheckBox checkBox4 = (CheckBox) findViewById(R.id.check_box_4);
+        CheckBox checkBox4 = (CheckBox) findViewById(R.id.check_box_7d);
         boolean isChecked4 = checkBox4.isChecked();
 
         if (isChecked1 && isChecked2 && isChecked3 && !isChecked4) {
             totalCorrect += 1;
 
-            setContentView(R.layout.q7_correct);
+            questionTextView.setText(R.string.correct);
         } else {
-            setContentView(R.layout.q7_incorrect);
+            questionTextView.setText(R.string.incorrect_response_7);
         }
 
     }
@@ -163,26 +209,31 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Checks question 8
      */
-    public void checkQuestion8(View view) {
+    public void checkQuestion8() {
 
-        CheckBox checkBox1 = (CheckBox) findViewById(R.id.check_box_1);
+        TextView questionTextView = (TextView) findViewById(R.id.question_text_view);
+
+        Button multiUseButton = (Button) findViewById(R.id.multi_use_button);
+        multiUseButton.setText(R.string.next_button);
+
+        CheckBox checkBox1 = (CheckBox) findViewById(R.id.check_box_8a);
         boolean isChecked1 = checkBox1.isChecked();
 
-        CheckBox checkBox2 = (CheckBox) findViewById(R.id.check_box_2);
+        CheckBox checkBox2 = (CheckBox) findViewById(R.id.check_box_8b);
         boolean isChecked2 = checkBox2.isChecked();
 
-        CheckBox checkBox3 = (CheckBox) findViewById(R.id.check_box_3);
+        CheckBox checkBox3 = (CheckBox) findViewById(R.id.check_box_8c);
         boolean isChecked3 = checkBox3.isChecked();
 
-        CheckBox checkBox4 = (CheckBox) findViewById(R.id.check_box_4);
+        CheckBox checkBox4 = (CheckBox) findViewById(R.id.check_box_8d);
         boolean isChecked4 = checkBox4.isChecked();
 
         if (isChecked1 && isChecked3 && isChecked4 && !isChecked2) {
             totalCorrect += 1;
 
-            setContentView(R.layout.q8_correct);
+            questionTextView.setText(R.string.correct);
         } else {
-            setContentView(R.layout.q8_incorrect);
+            questionTextView.setText(R.string.incorrect_response_8);
         }
 
     }
@@ -190,17 +241,22 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Checks question 9
      */
-    public void checkQuestion9(View view) {
+    public void checkQuestion9() {
 
-        RadioButton radioButtonD = (RadioButton) findViewById(R.id.radio_button_D);
+        TextView questionTextView = (TextView) findViewById(R.id.question_text_view);
+
+        Button multiUseButton = (Button) findViewById(R.id.multi_use_button);
+        multiUseButton.setText(R.string.next_button);
+
+        RadioButton radioButtonD = (RadioButton) findViewById(R.id.radio_button_9d);
         boolean isCheckedD = radioButtonD.isChecked();
 
         if (isCheckedD) {
             totalCorrect += 1;
 
-            setContentView(R.layout.q9_correct);
+            questionTextView.setText(R.string.correct);
         } else {
-            setContentView(R.layout.q9_incorrect);
+            questionTextView.setText(R.string.incorrect_response_9);
         }
 
     }
@@ -208,95 +264,30 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Checks question 10
      */
-    public void checkQuestion10(View view) {
+    public void checkQuestion10() {
 
-        RadioButton radioButtonB = (RadioButton) findViewById(R.id.radio_button_B);
+        TextView questionTextView = (TextView) findViewById(R.id.question_text_view);
+
+        Button multiUseButton = (Button) findViewById(R.id.multi_use_button);
+        multiUseButton.setText(R.string.results_button);
+
+        RadioButton radioButtonB = (RadioButton) findViewById(R.id.radio_button_10b);
         boolean isCheckedB = radioButtonB.isChecked();
 
         if (isCheckedB) {
             totalCorrect += 1;
 
-            setContentView(R.layout.q10_correct);
+            questionTextView.setText(R.string.correct);
         } else {
-            setContentView(R.layout.q10_incorrect);
+            questionTextView.setText(R.string.incorrect_response_10);
         }
 
     }
 
     /**
-     * Sets layout to question 1 layout
-     */
-    public void showQuestion1(View v) {
-        setContentView(R.layout.q1);
-    }
-
-    /**
-     * Sets layout to question 2 layout
-     */
-    public void showQuestion2(View v) {
-        setContentView(R.layout.q2);
-    }
-
-    /**
-     * Sets layout to question 3 layout
-     */
-    public void showQuestion3(View v) {
-        setContentView(R.layout.q3);
-    }
-
-    /**
-     * Sets layout to question 4 layout
-     */
-    public void showQuestion4(View v) {
-        setContentView(R.layout.q4);
-    }
-
-    /**
-     * Sets layout to question 5 layout
-     */
-    public void showQuestion5(View v) {
-        setContentView(R.layout.q5);
-    }
-
-    /**
-     * Sets layout to question 6 layout
-     */
-    public void showQuestion6(View v) {
-        setContentView(R.layout.q6);
-    }
-
-    /**
-     * Sets layout to question 7 layout
-     */
-    public void showQuestion7(View v) {
-        setContentView(R.layout.q7);
-    }
-
-    /**
-     * Sets layout to question 8 layout
-     */
-    public void showQuestion8(View v) {
-        setContentView(R.layout.q8);
-    }
-
-    /**
-     * Sets layout to question 9 layout
-     */
-    public void showQuestion9(View v) {
-        setContentView(R.layout.q9);
-    }
-
-    /**
-     * Sets layout to question 10 layout
-     */
-    public void showQuestion10(View v) {
-        setContentView(R.layout.q10);
-    }
-
-    /**
      * Sets layout to summary layout
      */
-    public void showSummary(View v) {
+    public void showSummary() {
 
         totalAttempts += 1;
 
@@ -332,7 +323,59 @@ public class MainActivity extends AppCompatActivity {
 
         totalCorrect = 0;
 
-        setContentView(R.layout.q1);
+        setContentView(R.layout.activity_main);
+
+        Button multiUseButton = (Button) findViewById(R.id.multi_use_button);
+        multiUseButton.setText(R.string.submit_button);
+
+        TextView headerTextView = (TextView) findViewById(R.id.question_header_text_view);
+        headerTextView.setText(R.string.question_header_1);
+
+        TextView questionTextView = (TextView) findViewById(R.id.question_text_view);
+        questionTextView.setText(R.string.question_1);
+
+        RadioGroup radioGroupQ1 = (RadioGroup) findViewById(R.id.radio_group_q1);
+        radioGroupQ1.clearCheck();
+        radioGroupQ1.setVisibility(View.VISIBLE);
+
+        RadioGroup radioGroupQ2 = (RadioGroup) findViewById(R.id.radio_group_q2);
+        radioGroupQ2.clearCheck();
+
+        EditText editTextQ3 = (EditText) findViewById(R.id.edit_text_q3);
+        editTextQ3.getText().clear();
+
+        EditText editTextQ4 = (EditText) findViewById(R.id.edit_text_q4);
+        editTextQ4.getText().clear();
+
+        CheckBox checkBox7a = (CheckBox) findViewById(R.id.check_box_7a);
+        checkBox7a.setChecked(false);
+
+        CheckBox checkBox7b = (CheckBox) findViewById(R.id.check_box_7b);
+        checkBox7b.setChecked(false);
+
+        CheckBox checkBox7c = (CheckBox) findViewById(R.id.check_box_7c);
+        checkBox7c.setChecked(false);
+
+        CheckBox checkBox7d = (CheckBox) findViewById(R.id.check_box_7d);
+        checkBox7d.setChecked(false);
+
+        CheckBox checkBox8a = (CheckBox) findViewById(R.id.check_box_8a);
+        checkBox8a.setChecked(false);
+
+        CheckBox checkBox8b = (CheckBox) findViewById(R.id.check_box_8b);
+        checkBox8b.setChecked(false);
+
+        CheckBox checkBox8c = (CheckBox) findViewById(R.id.check_box_8c);
+        checkBox8c.setChecked(false);
+
+        CheckBox checkBox8d = (CheckBox) findViewById(R.id.check_box_8d);
+        checkBox8d.setChecked(false);
+
+        RadioGroup radioGroupQ9 = (RadioGroup) findViewById(R.id.radio_group_q9);
+        radioGroupQ9.clearCheck();
+
+        RadioGroup radioGroupQ10 = (RadioGroup) findViewById(R.id.radio_group_q10);
+        radioGroupQ10.clearCheck();
     }
 
     /**
@@ -371,6 +414,8 @@ public class MainActivity extends AppCompatActivity {
     public void buttonSwitch (View v) {
 
         Button multiUseButton = (Button) findViewById(R.id.multi_use_button);
+        Button falseButtonQ5 = (Button) findViewById(R.id.false_button_q5);
+        Button falseButtonQ6 = (Button) findViewById(R.id.false_button_q6);
 
         TextView headerTextView = (TextView) findViewById(R.id.question_header_text_view);
         String headerText = headerTextView.getText().toString();
@@ -378,26 +423,103 @@ public class MainActivity extends AppCompatActivity {
         TextView questionTextView = (TextView) findViewById(R.id.question_text_view);
         String questionText = questionTextView.getText().toString();
 
+        RadioGroup radioGroupQ1 = (RadioGroup) findViewById(R.id.radio_group_q1);
+        RadioGroup radioGroupQ2 = (RadioGroup) findViewById(R.id.radio_group_q2);
+
+        EditText editTextQ3 = (EditText) findViewById(R.id.edit_text_q3);
+        EditText editTextQ4 = (EditText) findViewById(R.id.edit_text_q4);
+
+        LinearLayout checkBoxesQ7 = (LinearLayout) findViewById(R.id.check_boxes_q7);
+        LinearLayout checkBoxesQ8 = (LinearLayout) findViewById(R.id.check_boxes_q8);
+
+        RadioGroup radioGroupQ9 = (RadioGroup) findViewById(R.id.radio_group_q9);
+        RadioGroup radioGroupQ10 = (RadioGroup) findViewById(R.id.radio_group_q10);
+
         if (headerText == getString(R.string.intro_header)) {
             headerTextView.setText(R.string.question_header_1);
             questionTextView.setText(R.string.question_1);
             multiUseButton.setText(R.string.submit_button);
+            radioGroupQ1.setVisibility(View.VISIBLE);
         } else if ((headerText == getString(R.string.question_header_1)) && questionText == getString(R.string.question_1)) {
-            checkAnswer();
-            multiUseButton.setText(R.string.next_button);
-        } else if (headerText == getString(R.string.question_header_1)) {
+            radioGroupQ1.setVisibility(View.GONE);
+            checkQuestion1();
+        } else if ((headerText == getString(R.string.question_header_1)) && (questionText == getString(R.string.correct)) || questionText == getString(R.string.incorrect_response_1)) {
             headerTextView.setText(R.string.question_header_2);
             questionTextView.setText(R.string.question_2);
+            multiUseButton.setText(R.string.submit_button);
+            radioGroupQ2.setVisibility(View.VISIBLE);
+        } else if ((headerText == getString(R.string.question_header_2)) && questionText == getString(R.string.question_2)) {
+            radioGroupQ2.setVisibility(View.GONE);
+            checkQuestion2();
+        } else if ((headerText == getString(R.string.question_header_2)) && (questionText == getString(R.string.correct)) || questionText == getString(R.string.incorrect_response_2)) {
+            headerTextView.setText(R.string.question_header_3);
+            questionTextView.setText(R.string.question_3);
+            multiUseButton.setText(R.string.submit_button);
+            editTextQ3.setVisibility(View.VISIBLE);
+        } else if ((headerText == getString(R.string.question_header_3)) && questionText == getString(R.string.question_3)) {
+            editTextQ3.setVisibility(View.GONE);
+            checkQuestion3();
+        } else if ((headerText == getString(R.string.question_header_3)) && (questionText == getString(R.string.correct)) || questionText == getString(R.string.incorrect_response_3)) {
+            headerTextView.setText(R.string.question_header_4);
+            questionTextView.setText(R.string.question_4);
+            multiUseButton.setText(R.string.submit_button);
+            editTextQ4.setVisibility(View.VISIBLE);
+        } else if ((headerText == getString(R.string.question_header_4)) && questionText == getString(R.string.question_4)) {
+            editTextQ4.setVisibility(View.GONE);
+            checkQuestion4();
+        } else if ((headerText == getString(R.string.question_header_4)) && (questionText == getString(R.string.correct)) || questionText == getString(R.string.incorrect_response_4)) {
+            headerTextView.setText(R.string.question_header_5);
+            questionTextView.setText(R.string.question_5);
+            multiUseButton.setText(R.string.true_button);
+            falseButtonQ5.setVisibility(View.VISIBLE);
+        } else if ((headerText == getString(R.string.question_header_5)) && (questionText == getString(R.string.question_5)) && (multiUseButton.getText().toString() == getString(R.string.true_button))) {
+            falseButtonQ5.setVisibility(View.GONE);
+            multiUseButton.setText(R.string.next_button);
+            answerTrueQuestion5();
+        } else if ((headerText == getString(R.string.question_header_5)) && (questionText == getString(R.string.correct)) || questionText == getString(R.string.incorrect_response_5)) {
+            headerTextView.setText(R.string.question_header_6);
+            questionTextView.setText(R.string.question_6);
+            multiUseButton.setText(R.string.true_button);
+            falseButtonQ6.setVisibility(View.VISIBLE);
+        } else if ((headerText == getString(R.string.question_header_6)) && questionText == getString(R.string.question_6)) {
+            falseButtonQ6.setVisibility(View.GONE);
+            multiUseButton.setText(R.string.next_button);
+            answerTrueQuestion6();
+        } else if ((headerText == getString(R.string.question_header_6)) && (questionText == getString(R.string.correct)) || questionText == getString(R.string.incorrect_response_6)) {
+            headerTextView.setText(R.string.question_header_7);
+            questionTextView.setText(R.string.question_7);
+            multiUseButton.setText(R.string.submit_button);
+            checkBoxesQ7.setVisibility(View.VISIBLE);
+        } else if ((headerText == getString(R.string.question_header_7)) && questionText == getString(R.string.question_7)) {
+            checkBoxesQ7.setVisibility(View.GONE);
+            checkQuestion7();
+        } else if ((headerText == getString(R.string.question_header_7)) && (questionText == getString(R.string.correct)) || questionText == getString(R.string.incorrect_response_7)) {
+            headerTextView.setText(R.string.question_header_8);
+            questionTextView.setText(R.string.question_8);
+            multiUseButton.setText(R.string.submit_button);
+            checkBoxesQ8.setVisibility(View.VISIBLE);
+        } else if ((headerText == getString(R.string.question_header_8)) && questionText == getString(R.string.question_8)) {
+            checkBoxesQ8.setVisibility(View.GONE);
+            checkQuestion8();
+        } else if ((headerText == getString(R.string.question_header_8)) && (questionText == getString(R.string.correct)) || questionText == getString(R.string.incorrect_response_8)) {
+            headerTextView.setText(R.string.question_header_9);
+            questionTextView.setText(R.string.question_9);
+            multiUseButton.setText(R.string.submit_button);
+            radioGroupQ9.setVisibility(View.VISIBLE);
+        } else if ((headerText == getString(R.string.question_header_9)) && questionText == getString(R.string.question_9)) {
+            radioGroupQ9.setVisibility(View.GONE);
+            checkQuestion9();
+        } else if ((headerText == getString(R.string.question_header_9)) && (questionText == getString(R.string.correct)) || questionText == getString(R.string.incorrect_response_9)) {
+            headerTextView.setText(R.string.question_header_10);
+            questionTextView.setText(R.string.question_10);
+            multiUseButton.setText(R.string.submit_button);
+            radioGroupQ10.setVisibility(View.VISIBLE);
+        } else if ((headerText == getString(R.string.question_header_10)) && questionText == getString(R.string.question_10)) {
+            radioGroupQ10.setVisibility(View.GONE);
+            checkQuestion10();
+        } else if ((headerText == getString(R.string.question_header_10)) && (questionText == getString(R.string.correct)) || questionText == getString(R.string.incorrect_response_10)) {
+            showSummary();
         }
-    }
-
-    /**
-     * Check answer
-     */
-    public void checkAnswer () {
-
-        //TODO: Move answer-checking logic here
-        //TODO: Delete all 30 extra layouts...combine into activity_main
 
     }
 
